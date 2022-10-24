@@ -36,3 +36,8 @@ button {
     background: darkgreen;
 }
 
+#save-el {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
