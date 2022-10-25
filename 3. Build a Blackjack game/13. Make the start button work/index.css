@@ -5,6 +5,7 @@ body {
     font-weight: bold;
     color: white;
     text-align: center;
+    font-size: 2rem;
 }
 
 h1 {
@@ -23,5 +24,8 @@ background - goldenrod
  */
  
 button {
-
+    color: #016f32;
+    width: 150px;
+    background-color: goldenrod;
+    text-transform: uppercase;
 }
