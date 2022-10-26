@@ -5,6 +5,7 @@ body {
     font-weight: bold;
     color: white;
     text-align: center;
+    font-size: 2rem;
 }
 
 h1 {
@@ -19,13 +20,15 @@ h1 {
 each other when they are rendered out vertically */
 button {
     color: #016f32;
-    width: 150px;
+    width: 250px;
     background: goldenrod;
     padding-top: 5px;
     padding-bottom: 5px;
     font-weight: bold;
     border: none;
     border-radius: 2px;
-    margin-bottom: 2px;
-    margin-top: 2px;
+    margin: 0.35em 0;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
 }
