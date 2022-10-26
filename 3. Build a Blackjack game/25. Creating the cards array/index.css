@@ -26,6 +26,8 @@ button {
     font-weight: bold;
     border: none;
     border-radius: 2px;
-    margin-bottom: 2px;
-    margin-top: 2px;
+    margin: 0.4em 0;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
 }
