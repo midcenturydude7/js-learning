@@ -1,12 +1,12 @@
-let randomNumber = Math.random()
+let randomNumber = Math.random();
 
-console.log(randomNumber)
+console.log(randomNumber);
 
 
 /* 
 
 What does Math.random() do?
 
-Your answer: 
+Your answer: It is a method that returns a numeric value between 0 and 1
 
 */
