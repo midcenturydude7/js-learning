@@ -2,8 +2,8 @@ let hands = ["rock", "paper", "scissor"];
 
 // Create a function that returns a random item from the array
 function roShamBo() {
-  let randomIndex = Math.floor(Math.random() * 3) +1;
-  return randomIndex;
+  let randomIndex = Math.floor(Math.random() * 3);
+  return hands[randomIndex];
 }
 
 console.log(roShamBo());
