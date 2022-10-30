@@ -8,6 +8,7 @@ inputBtn.addEventListener("click", function () {
   inputEl.value = "";
   // Save the myLeads array to localStorage
   // PS: remember JSON.stringify()
+  localStorage.setItem("myLeads", JSON.stringify(myLeads));
   renderLeads();
 
   // To verify that it works:
@@ -19,7 +20,7 @@ function renderLeads() {
   for (let i = 0; i < myLeads.length; i++) {
     listItems += `
             <li>
-                <a target='_blank' href='${myLeads[i]}'>
+                <a target='_blank' href='https://${myLeads[i]}'>
                     ${myLeads[i]}
                 </a>
             </li>
