@@ -9,5 +9,21 @@
 
 // Use both a for loop and a template string to solve the challenge
 function generateSentence(desc, arr) {
-    
+  let baseString = `The ${arr.length} ${desc} are the `;
+  const lastIndex = arr.length - 1;
+  for (let i = 0; i < arr.length; i++) {
+    if (i === lastIndex) {
+      baseString += "and the " + arr[i] + ".";
+    } else {
+      baseString += arr[i] + ", ";
+    }
+  }
+  return baseString;
 }
+
+const sentence = generateSentence("The best teams in the NBA", [
+  "Warriors",
+  "Celtics",
+  "Bucks",
+]);
+console.log(sentence);
