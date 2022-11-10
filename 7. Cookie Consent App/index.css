@@ -65,23 +65,13 @@ main{
 /* modal */
 
 .modal {
-  
-/*
-Challenge:
-1. Make the modal sit on top of the other content. 
-2. Make sure it is centrally aligned both horizontally
- and vertically (just like in the slide).
-3. When it's positioned correctly, set its display 
- property to 'none'.
-*/
-
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  height: 420px;
+  height: 445px;
   width: 350px;
   border-radius: 5px;
   box-shadow: 0px 0px 6px 2px #666;
@@ -100,7 +90,6 @@ Challenge:
 }
 
 /* modal buttons */
-
 .close-modal-btn-container{
   text-align: right;
   margin: 9px;
@@ -139,7 +128,6 @@ Challenge:
 }
 
 /* modal input */
-
 input{
   margin-top: 10px; 
   border: 1px solid #212529;
@@ -148,8 +136,19 @@ input{
   border-radius: 3px;
 }
 
-/* modal after submit */
+button {
+  margin: .1em .5em 0 0; 
+  padding: 12px 17px;
+  border: none;
+  background-color: #ffffff;
+  color: #000000;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer; 
+}
 
+/* modal after submit */
 .loading{
   width: 100%; 
   margin-top: 10px;

@@ -8,6 +8,7 @@ Challenge:
 
 const modal = document.getElementById("modal");
 const modalCloseBtn = document.getElementById("modal-close-btn");
+const modalBtn = document.getElementById("modal-btn");
 
 setTimeout(function () {
   modal.style.display = "inline";
@@ -15,4 +16,8 @@ setTimeout(function () {
 
 modalCloseBtn.addEventListener("click", function () {
   modal.style.display = "none";
+});
+
+modalBtn.addEventListener("click", function () {
+  modalBtn.style.display = "";
 });
