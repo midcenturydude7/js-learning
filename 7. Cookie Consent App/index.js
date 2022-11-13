@@ -8,7 +8,7 @@ Challenge:
 
 const modal = document.getElementById("modal");
 const modalCloseBtn = document.getElementById("modal-close-btn");
-const modalBtn = document.getElementById("modal-btn");
+const consentForm = document.getElementById("consent-form");
 
 setTimeout(function () {
   modal.style.display = "inline";
@@ -18,6 +18,7 @@ modalCloseBtn.addEventListener("click", function () {
   modal.style.display = "none";
 });
 
-modalBtn.addEventListener("click", function () {
-  modalBtn.style.display = "none";
+consentForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log("Form submitted!");
 });
