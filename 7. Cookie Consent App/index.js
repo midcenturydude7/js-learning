@@ -19,5 +19,5 @@ modalCloseBtn.addEventListener("click", function () {
 });
 
 modalBtn.addEventListener("click", function () {
-  modalBtn.style.display = "";
+  modalBtn.style.display = "none";
 });
