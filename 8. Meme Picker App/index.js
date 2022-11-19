@@ -1,12 +1,20 @@
+// IMPORTS
 import { catsData } from "./data.js";
 
+// DOM VARIABLES
 const emotionRadios = document.getElementById("emotion-radios");
 const getImageBtn = document.getElementById("get-image-btn");
 const gifsOnlyOption = document.getElementById("gifs-only-option");
+const memeModal = document.getElementById("meme-modal");
+const memeModalInner = document.getElementById("meme-modal-inner");
+const memeModalCloseBtn = document.getElementById("meme-modal-close-btn");
 
+// EVENT LISTENERS
 emotionRadios.addEventListener("change", highlightCheckedOption);
-getImageBtn.addEventListener("click", getMatchingCatsArray);
+memeModalCloseBtn.addEventListener("click", closeModal);
+getImageBtn.addEventListener("click", renderCat);
 
+// FUNCTIONS
 function highlightCheckedOption(e) {
   const radioClass = document.getElementsByClassName("radio");
 
@@ -17,15 +25,52 @@ function highlightCheckedOption(e) {
   document.getElementById(e.target.id).parentElement.classList.add("highlight");
 }
 
-function getMatchingCatsArray() {
-  const isGif = gifsOnlyOption.checked;
-  console.log(isGif);
+function closeModal() {
+  memeModal.style.display = "none";
+}
 
+function renderCat() {
+  const catObject = getSingleCatObject();
+
+  memeModalInner.innerHTML = `
+    <img
+    class="cat-img"
+    src="./images/${catObject.image}"
+    alt="${catObject.alt}"
+    >
+  `;
+
+  memeModal.style.display = "flex";
+}
+
+function getSingleCatObject() {
+  const catsArray = getMatchingCatsArray();
+
+  if (catsArray.length === 1) {
+    return catsArray[0];
+  } else {
+    const randomNumber = Math.floor(Math.random() * catsArray.length);
+    return catsArray[randomNumber];
+  }
+}
+
+function getMatchingCatsArray() {
   if (document.querySelector("input[type='radio']:checked")) {
-    const checkedRadioInput = document.querySelector(
+    const selectedEmotion = document.querySelector(
       "input[type='radio']:checked"
     ).value;
-    console.log(checkedRadioInput);
+
+    const isGif = gifsOnlyOption.checked;
+    console.log(isGif);
+
+    const matchingCatsArray = catsData.filter(function (cat) {
+      if (isGif) {
+        return cat.emotionTags.includes(selectedEmotion) && cat.isGif;
+      } else {
+        return cat.emotionTags.includes(selectedEmotion);
+      }
+    });
+    return matchingCatsArray;
   }
 }
 
@@ -39,9 +84,9 @@ function getEmotionsArray(cats) {
       }
     }
   }
-
   return emotionsArray;
 }
+
 function renderEmotionsRadios(cats) {
   let radioItems = "";
   const emotions = getEmotionsArray(cats);
